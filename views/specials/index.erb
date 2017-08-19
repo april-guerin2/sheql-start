@@ -10,8 +10,9 @@
                             <div class="small-padding">
                                 <h3>Ordering a Special</h3>
                                 <form>
+                                    <form action="/order" method="post">
                                     <label>Number of Scoops *</label>
-                                    <select>
+                                    <select name="scoops">
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -19,7 +20,7 @@
                                     </select>
                                     
                                     <label>Eating Method *</label>
-                                    <select>
+                                    <select name="eating_method">
                                         <option>Waffle Cone</option>
                                         <option>Waffle Cone-Choclate Dipped</option>
                                         <option>Waffle Bowl</option>
@@ -27,14 +28,13 @@
                                     </select>
                                     
                                     <label>Special *</label>
-                                    <select>
+                                    <select name="special_id">
                                         <option>Rocky Road</option>
                                         <option>Moose Tracks</option>
                                     </select>
-                                    
+                                <input class="button" type="submit">Click to submit order.</input>                                        
                                 </form>
                                 
-                                <a class="button" href="#">Click to submit order.</a>
 
                             </div>
                         </div>

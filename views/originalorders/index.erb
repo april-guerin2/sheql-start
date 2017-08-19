@@ -9,9 +9,9 @@
                         <div class="third">
                             <div class="small-padding">
                                 <h3>Make Your Own</h3>
-                                <form>
+                                <form action="/order" method="post">
                                     <label>Number of Scoops *</label>
-                                    <select>
+                                    <select name="scoops">
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -19,63 +19,63 @@
                                     </select>
                                     
                                     <label>Eating Method *</label>
-                                    <select>
-                                        <option>Waffle Cone</option>
-                                        <option>Waffle Cone-Choclate Dipped</option>
-                                        <option>Waffle Bowl</option>
-                                        <option>Bowl</option>
+                                    <select name="eating_method">
+                                        <option value="waffle_cone">Waffle Cone</option>
+                                        <option value="waffle_cone_chocolate_dipped">Waffle Cone-Choclate Dipped</option>
+                                        <option value="waffle_bowl">Waffle Bowl</option>
+                                        <option value="bowl">Bowl</option>
                                     </select>
                                     
                                     <label>Ice Cream Flavor *</label>
-                                    <select>
+                                    <select name="flavor_one">
                                         <% @flavors.each do |f| %>
-                                        <option><input type="checkbox" class="top-margin"><%= f.name %><br></option>
+                                        <option value=<%= f.id %> ><%= f.name %></option>
                                         <% end %>
                                     </select>
                                     
-                                    <select>
+                                    <select name="flavor_two">
                                         <% @flavors.each do |f| %>
-                                        <option><%= f.name %></option>
+                                        <option value=<%= f.id %> ><%= f.name %></option>
                                         <% end %>
                                     </select>
                                     
                                     <label>Mix In</label>
                                     
-                                    <select>
+                                    <select name="mixin_one">
                                         <% @mixes.each do |f| %>
-                                        <option><%= f.name %></option>
+                                        <option value=<%= f.id %> ><%= f.name %></option>
                                         <% end %>
                                     </select>
 
-                                    <select>
+                                    <select name="mixin_two">
                                         <% @mixes.each do |f| %>
-                                        <option><%= f.name %></option>
+                                        <option value=<%= f.id %> ><%= f.name %></option>
                                         <% end %>
                                     </select>
 
-                                    <select>
+                                    <select name="mixin_three">
                                         <% @mixes.each do |f| %>
-                                        <option><%= f.name %></option>
+                                        <option value=<%= f.id %> ><%= f.name %></option>
                                         <% end %>
                                     </select>
                                     
                                     <label>Topping</label>
                                     
-                                    <select>
+                                    <select name="topping_one">
                                         <% @toppins.each do |f| %>
-                                        <option><%= f.name %></option>
+                                        <option value=<%= f.id %> ><%= f.name %></option>
                                         <% end %>
                                     </select>
                                     
-                                    <select>
+                                    <select name="topping_two">
                                         <% @toppins.each do |f| %>
-                                        <option><%= f.name %></option>
+                                        <option value=<%= f.id %> ><%= f.name %></option>
                                         <% end %>
                                     </select>
-                                    
+                                <input class="button" type="submit"></input>                                    
                                 </form>
                                 
-                                <a class="button" href="#">Click to submit order.</a>
+
                             </div>
                         </div>
         <section>

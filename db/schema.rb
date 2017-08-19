@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805154709) do
+ActiveRecord::Schema.define(version: 20170819170301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,11 +20,18 @@ ActiveRecord::Schema.define(version: 20170805154709) do
     t.boolean "dairy"
   end
 
-  create_table "icecream", force: :cascade do |t|
+  create_table "ice_cream_flavors", force: :cascade do |t|
     t.bigint "order_id"
     t.bigint "flavor_id"
-    t.index ["flavor_id"], name: "index_icecream_on_flavor_id"
-    t.index ["order_id"], name: "index_icecream_on_order_id"
+    t.index ["flavor_id"], name: "index_ice_cream_flavors_on_flavor_id"
+    t.index ["order_id"], name: "index_ice_cream_flavors_on_order_id"
+  end
+
+  create_table "mix_ins", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "mix_id"
+    t.index ["mix_id"], name: "index_mix_ins_on_mix_id"
+    t.index ["order_id"], name: "index_mix_ins_on_order_id"
   end
 
   create_table "mixes", force: :cascade do |t|
@@ -35,17 +42,10 @@ ActiveRecord::Schema.define(version: 20170805154709) do
     t.boolean "other"
   end
 
-  create_table "mixins", force: :cascade do |t|
-    t.bigint "order_id"
-    t.bigint "mix_id"
-    t.index ["mix_id"], name: "index_mixins_on_mix_id"
-    t.index ["order_id"], name: "index_mixins_on_order_id"
-  end
-
   create_table "orders", force: :cascade do |t|
     t.integer "scoops"
-    t.string "eating_method"
     t.bigint "special_id"
+    t.integer "eating_method"
     t.index ["special_id"], name: "index_orders_on_special_id"
   end
 

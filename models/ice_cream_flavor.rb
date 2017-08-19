@@ -3,5 +3,4 @@ class IceCreamFlavor < ActiveRecord::Base
     belongs_to :flavor
     
     validates :order, presence: true 
-    validates :flavor, presence: true 
 end
