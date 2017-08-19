@@ -1,7 +1,25 @@
 get '/' do
-  if no_authentication?
-    erb :"home"
-  else
-    "Hi, #{session[:name]}.  <img style='width:60px; border-radius:50%;' src='#{session[:picture]}' >"
-  end
+  
+  @flavors=Flavor.all
+  @mixes=Mix.all
+  @toppins=Toppin.all
+  @specials=Special.all
+  
+  erb :"home"
+
+end
+
+get '/specials' do
+  
+  erb :"specials/index"
+end
+
+get '/originalorders' do
+  
+  @flavors=Flavor.all
+  @mixes=Mix.all
+  @toppins=Toppin.all
+
+  
+  erb :"originalorders/index"
 end

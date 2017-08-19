@@ -3,13 +3,16 @@
     <section id="heading">
         <div class="full-width">
             <div class="small-padding">
-                <h2>Candy Framework</h2>
-                <p>This site uses the candy framework built by @puzzalea (aka Cara Heacock).  Find documentation <a href="https://github.com/puzzalea/candy"> here</a>.  Find demos <a href="https://puzzalea.github.io/candy/">here.</a></p>
+                <h1>Scoop n' Smiles</h1>
+                <p>This site is for ordering all of your online ice cream needs.</a></p>
+                <p>A person can order ice cream from 1 to 4 scoops.</a></p>
+                <p>They can eat with a Waffle Cone, a Waffle Cone-Choclate Dipped, a Waffle Bowl, or a Bowl.</a></p>
             </div>
         </div>
     </section>
+</div>
 
-        <section id="accordions">
+<!--        <section id="accordions">
             <div class="container">
                 <div class="full-width">
                     <div class="small-padding">
@@ -45,10 +48,10 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
 
 
-         <section id="forms">
+<!--         <section id="forms">
                     <div class="container">
                         <div class="full-width">
                             <div class="small-padding">
@@ -99,80 +102,178 @@
                                 </form>
                             </div>
                         </div>
-        <section>
+        <section>-->
 
-
-
+<% %>
+<div class="MakingIceCream">
         <section id="tables">
-            <div class="container">
+            <div class="MakingIceCream">
                 <div class="full-width">
                     <div class="small-padding">
-                        <h2 class="purple-underline small-bottom-padding">Tables</h2>
+                        <h2 class="purple-underline small-bottom-padding">Flavors</h2>
                     </divs>
                 </div>
-                <div class="half">
+                    <div class="accordion round-corners light-blue-background">
+                        <div class="accordion-headline">
+                            <h4>Ice Cream</h4>
+                        </div>
+                        <div class="accordion-content">
+                                           <div class="half">
                     <div class="small-padding">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>ID</th>
                                     <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Age</th>
+                                    <th>Dairy</th>
+                                
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Katie</td>
-                                    <td>katie@example.com</td>
-                                    <td>14</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Hannah</td>
-                                    <td>hannah_panda@example.com</td>
-                                    <td>17</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Joseph</td>
-                                    <td>coolguy@example.com</td>
-                                    <td>13</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Arin</td>
-                                    <td>whatever@example.com</td>
-                                    <td>16</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Danny</td>
-                                    <td>dannyyyyyy@example.com</td>
-                                    <td>18</td>
-                                </tr>
+                                <% @flavors.each do |f| %>
+                                    <tr>
+                                        <td><%= f.name %></td>
+                                        <td><%= f.dairy %></td>
+                                    </tr>
+                               <% end %>
                             </tbody>
                         </table>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    </div>     
+                        </div>
+                    </div>                
 
-         <section id="buttons-links">
-            <div class="container small-padding">
-                <div class="full-width">
-                    <h2 class="green-underline small-bottom-padding">Buttons and Links</h2>
-                    
-                    <p><a href="#">This is a regular link</a></p>
-                    
-                    <p>
-                        <a class="button" href="#">Default Button</a>
-                        <a class="pink-button" href="#">Pink Button</a>
-                        <a class="green-button" href="#">Green Button</a>
-                        <a class="purple-button" href="#">Purple Button</a>
-                    </p>
                 </div>
             </div>
         </section>
+        
+         <section id="tables">
+                    <div class="MakingIceCream">
+                        <div class="full-width">
+                            <div class="small-padding">
+                                <h2 class="purple-underline small-bottom-padding">Mix Ins</h2>
+                            </divs>
+                        </div>
+                        <div class="accordion round-corners light-blue-background">
+                            <div class="accordion-headline">
+                                <h4>Mix Ins</h4>
+                            </div>
+                            <div class="accordion-content">
+                        <div class="half">
+                            <div class="small-padding">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Chocolate</th>
+                                            <th>Nuts</th>
+                                            <th>Fruits</th>
+                                            <th>Others</th>
+                                        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% @mixes.each do |m| %>
+                                            <tr>
+                                                <td><%= m.name %></td>
+                                                <td><%= m.choclate %></td>
+                                                <td><%= m.nuts %></td>
+                                                <td><%= m.fruits %></td>
+                                                <td><%= m.other %></td>
+                                            </tr>
+                                       <% end %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>                                
+                            </div>
+                        </div>                        
+
+                    </div>
+                </section>
+                 <section id="tables">
+                            <div class="MakingIceCream">
+                                <div class="full-width">
+                                    <div class="small-padding">
+                                        <h2 class="purple-underline small-bottom-padding">Toppings</h2>
+                                    </divs>
+                                </div>
+                        <div class="accordion round-corners light-blue-background">
+                            <div class="accordion-headline">
+                                <h4>Toppings</h4>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="half">
+                                    <div class="small-padding">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% @toppins.each do |t| %>
+                                                    <tr>
+                                                        <td><%= t.name %></td>
+                                                    </tr>
+                                               <% end %>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                                
+                            </div>
+                        </section> 
+                                 <section id="tables">
+                    <div class="MakingIceCream">
+                        <div class="full-width">
+                            <div class="small-padding">
+                                <h2 class="purple-underline small-bottom-padding">Specials</h2>
+                            </divs>
+                        </div>
+                        <div class="accordion round-corners light-blue-background">
+                            <div class="accordion-headline">
+                                <h4>Specials</h4>
+                            </div>
+                            <div class="accordion-content">
+                            <div class="half">
+                            <div class="small-padding">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% @specials.each do |z| %>
+                                            <tr>
+                                                <td><%= z.name %></td>
+                                                <td><%= z.description %></td>
+                                            </tr>
+                                       <% end %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+                        </div>
+                        
+                </section>
+        
+                 <section id="Order">
+                    <div class="container small-padding">
+                        <div class="full-width">
+                            <h2 class="green-underline small-bottom-padding">Order</h2>
+                            
+                            <p>
+                                <a class="button" href="https://sheql-aprilguerin.c9users.io/specials">Click to order a special</a>
+                                <a class="purple-button" href="https://sheql-aprilguerin.c9users.io/originalorders">Click to make your own ice cream</a>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                
 </div>
