@@ -71,10 +71,21 @@ post '/order' do
 end
 
 get '/order/:id' do
-  id = params[:id]
-  @order = Order.find(id)
-  #b.second.flavor.name
-  #b = a.ice_cream_flavors
-
-  "Hello thank you for ordering Scoop 'n Smiles ice cream. Your #{@order.scoops} scoop of 
+    id = params[:id]
+    @order = Order.find(id)
+    @flavor = @order.ice_cream_flavors
+    @eating = @order.eating_method
+    @mixin = @order.mix_ins
+    @topping = @order.toppings
+    
+    #b.second.flavor.name
+    #b = a.ice_cream_flavors
+    
+    #git add .
+    #git commit -m "d"
+    #git push origin master
+  
+  #  "Hello thank you for ordering Scoop 'n Smiles ice cream. Your #{@order.scoops} scoop #{@flavor.first.flavor.name} and #{@flavor.second.flavor.name} ice cream in a #{@eating} with #{@mixin.first.mix.name}, #{@mixin.second.mix.name}, and #{@mixin.third.mix.name} in it. There will be #{@topping.first.toppin.name} and #{@topping.second.toppin.name} on top. If you would like to order again please return to home." 
+  erb :"order/index"
 end
+
